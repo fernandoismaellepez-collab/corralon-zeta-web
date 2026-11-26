@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CORRALÓN ZETA | Materiales para tu obra - Presidente Derqui</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Oswald (títulos industriales condensados) + Inter (lectura clara) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome para íconos limpios -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Oswald', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            zeta: {
+              black: '#0A0A0A',
+              dark: '#141414',
+              card: '#1B1B1B',
+              border: '#2A2A2A',
+              orange: '#FF6B00',
+              orangeHover: '#E05A00',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      background-color: #0A0A0A;
+      color: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+    }
+    .font-display {
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.02em;
+    }
+    /* Patrón sutil industrial en el hero */
+    .hero-grid {
+      background-image: radial-gradient(rgba(255, 107, 0, 0.14) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    /* Scrollbar personalizada */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0A0A0A;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2A2A2A;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #FF6B00;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-zeta-orange selection:text-white">
+
+  <!-- ==================== NAVBAR STICKY ==================== -->
+  <header class="sticky top-0 z-50 bg-zeta-black/95 backdrop-blur-md border-b border-zeta-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo Corralón Zeta -->
+        <a href="#inicio" class="flex items-center gap-3 group">
+          <div class="flex flex-col">
+            <div class="flex items-center gap-1.5">
+              <!-- Techo estilizado naranja igual al branding -->
+              <svg class="w-8 h-7 text-zeta-orange shrink-0 transition-transform group-hover:scale-105" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 26L32 8L58 26" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14 38H50" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
+              </svg>
+              <span class="font-display text-2xl sm:text-3xl font-bold tracking-tight text-white leading-none">
+                CORRALÓN <span class="text-zeta-orange">ZETA</span>
+              </span>
+            </div>
+            <span class="text-[10px] sm:text-[11px] font-semibold tracking-widest text-neutral-300 uppercase mt-0.5 pl-1">
+              MATERIALES PARA TU OBRA - SIEMPRE CERCA
+            </span>
+          </div>
+        </a>
+
+        <!-- Navegación Desktop -->
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-neutral-300">
+          <a href="#combos" class="hover:text-zeta-orange transition-colors">Combos de Obra</a>
+          <a href="#acopio" class="hover:text-zeta-orange transition-colors">Plan de Acopio</a>
+          <a href="#cotizador" class="hover:text-zeta-orange transition-colors">Cotizador Rápido</a>
+          <a href="#entregas" class="hover:text-zeta-orange transition-colors">Entregas y Ubicación</a>
+        </nav>
+
+        <!-- CTA WhatsApp Header + Botón menú móvil -->
+        <div class="flex items-center gap-3">
+          <a href="https://wa.me/5491168304581?text=Hola%20Corral%C3%B3n%20Zeta%2C%20quiero%20hacer%20una%20consulta%20por%20materiales."
+             target="_blank"
+             rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-950/50 transition-all">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span class="hidden sm:inline">11 6830-4581</span>
+            <span class="sm:hidden">WhatsApp</span>
+          </a>
+
+          <button id="mobile-menu-btn"
+                  aria-label="Abrir menú"
+                  class="lg:hidden p-2.5 rounded-xl bg-zeta-card border border-zeta-border text-neutral-200 hover:text-zeta-orange">
+            <i class="fa-solid fa-bars text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menú Móvil Desplegable -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-zeta-dark border-b border-zeta-border px-4 pt-2 pb-5 space-y-2">
+      <a href="#combos" class="block py-2.5 px-3 rounded-lg text-base font-semibold text-neutral-200 hover:bg-zeta-card hover:text-zeta-orange">Combos de Obra</a>
+      <a href="#acopio" class="block py-2.5 px-3 rounded-lg text-base font-semibold text-neutral-200 hover:bg-zeta-card hover:text-zeta-orange">Plan de Acopio</a>
+      <a href="#cotizador" class="block py-2.5 px-3 rounded-lg text-base font-semibold text-neutral-200 hover:bg-zeta-card hover:text-zeta-orange">Cotizador Rápido</a>
+      <a href="#entregas" class="block py-2.5 px-3 rounded-lg text-base font-semibold text-neutral-200 hover:bg-zeta-card hover:text-zeta-orange">Entregas y Ubicación</a>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="inicio" class="relative overflow-hidden hero-grid border-b border-zeta-border">
+    <!-- Resplandor naranja sutil -->
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-zeta-orange/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24 relative">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <!-- Columna izquierda: Mensaje principal -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 bg-zeta-card border border-zeta-orange/40 text-zeta-orange text-xs sm:text-sm font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Av. Perón 4275 · Presidente Derqui, Pilar</span>
+          </div>
+
+          <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-bold uppercase leading-[1.03] text-white">
+            MATERIALES PARA TU OBRA, <span class="text-zeta-orange">SIEMPRE CERCA</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-neutral-300 max-w-2xl leading-relaxed">
+            Stock permanente en obra gruesa, terminaciones y ferretería. Precios promocionales para <strong class="text-white">entrega inmediata (miércoles, viernes y sábados)</strong> en Presidente Derqui y zona, o <strong class="text-zeta-orange">Plan de Acopio con 30 días de resguardo sin cargo</strong>.
+          </p>
+
+          <!-- Botones de acción principales -->
+          <div class="flex flex-col sm:flex-row gap-3.5 pt-2">
+            <a href="#combos"
+               class="inline-flex items-center justify-center gap-2.5 bg-zeta-orange hover:bg-zeta-orangeHover text-white font-display uppercase text-lg tracking-wide px-7 py-4 rounded-xl shadow-lg shadow-orange-950/40 transition-all">
+              <i class="fa-solid fa-cubes"></i>
+              <span>Ver Combos de Obra</span>
+            </a>
+            <a href="#cotizador"
+               class="inline-flex items-center justify-center gap-2.5 bg-zeta-card hover:bg-neutral-800 border border-zeta-border hover:border-zeta-orange text-white font-display uppercase text-lg tracking-wide px-7 py-4 rounded-xl transition-all">
+              <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
+              <span>Armar Presupuesto por WhatsApp</span>
+            </a>
+          </div>
+
+          <!-- Badges de confianza -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4">
+            <div class="flex items-center gap-3 bg-zeta-dark/90 border border-zeta-border p-3.5 rounded-xl">
+              <div class="w-10 h-10 rounded-lg bg-zeta-orange/15 text-zeta-orange flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-truck-fast text-lg"></i>
+              </div>
+              <div>
+                <p class="text-xs text-neutral-400 font-medium">Reparto Programado</p>
+                <p class="text-sm font-bold text-white">Mié / Vie / Sáb</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 bg-zeta-dark/90 border border-zeta-border p-3.5 rounded-xl">
+              <div class="w-10 h-10 rounded-lg bg-zeta-orange/15 text-zeta-orange flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-lock text-lg"></i>
+              </div>
+              <div>
+                <p class="text-xs text-neutral-400 font-medium">Plan de Acopio</p>
+                <p class="text-sm font-bold text-white">30 Días Sin Cargo</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 bg-zeta-dark/90 border border-zeta-border p-3.5 rounded-xl">
+              <div class="w-10 h-10 rounded-lg bg-zeta-orange/15 text-zeta-orange flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-store text-lg"></i>
+              </div>
+              <div>
+                <p class="text-xs text-neutral-400 font-medium">Retiro en Local</p>
+                <p class="text-sm font-bold text-white">Av. Perón 4275</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna derecha: Tarjeta destacada de campaña / acceso rápido -->
+        <div class="lg:col-span-5">
+          <div class="bg-zeta-dark border-2 border-zeta-orange/70 rounded-2xl p-6 sm:p-7 shadow-2xl relative">
+            <div class="inline-block bg-zeta-orange text-white font-display uppercase text-xs tracking-wider px-3 py-1 rounded-md mb-4">
+              Destacados de Temporada
+            </div>
+            <h2 class="font-display text-2xl sm:text-3xl uppercase text-white mb-2">
+              Arreglos para las Fiestas o Acopio para tu Obra
+            </h2>
+            <p class="text-sm text-neutral-300 mb-5">
+              Elegí entre nuestros combos armados para entrega inmediata o congelá materiales básicos antes de arrancar tu proyecto.
+            </p>
+
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center justify-between bg-zeta-card border border-zeta-border p-3.5 rounded-xl">
+                <div class="flex items-center gap-3">
+                  <i class="fa-solid fa-fire-burner text-zeta-orange text-lg"></i>
+                  <div>
+                    <p class="text-sm font-bold text-white">Combo Parrilla Completa</p>
+                    <p class="text-xs text-neutral-400">Entrega viernes o sábados</p>
+                  </div>
+                </div>
+                <a href="#combos" class="text-xs font-bold text-zeta-orange hover:underline">Ver detalle →</a>
+              </div>
+
+              <div class="flex items-center justify-between bg-zeta-card border border-zeta-border p-3.5 rounded-xl">
+                <div class="flex items-center gap-3">
+                  <i class="fa-solid fa-paint-roller text-zeta-orange text-lg"></i>
+                  <div>
+                    <p class="text-sm font-bold text-white">Kit Pintura Express</p>
+                    <p class="text-xs text-neutral-400">Preventa activa · Precio lanzamiento</p>
+                  </div>
+                </div>
+                <a href="#combos" class="text-xs font-bold text-zeta-orange hover:underline">Ver detalle →</a>
+              </div>
+
+              <div class="flex items-center justify-between bg-zeta-card border border-zeta-border p-3.5 rounded-xl">
+                <div class="flex items-center gap-3">
+                  <i class="fa-solid fa-trowel-bricks text-zeta-orange text-lg"></i>
+                  <div>
+                    <p class="text-sm font-bold text-white">Súper Combo Pared / Pieza 4x4</p>
+                    <p class="text-xs text-neutral-400">Obra gruesa · Apto Plan de Acopio</p>
+                  </div>
+                </div>
+                <a href="#combos" class="text-xs font-bold text-zeta-orange hover:underline">Ver detalle →</a>
+              </div>
+            </div>
+
+            <a href="https://wa.me/5491168304581?text=Hola%20Corral%C3%B3n%20Zeta%2C%20quisiera%20consultar%20precios%20de%20contado%20o%20armar%20un%20Plan%20de%20Acopio."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="w-full inline-flex items-center justify-center gap-2 bg-white hover:bg-neutral-200 text-zeta-black font-display uppercase text-base tracking-wide py-3.5 px-5 rounded-xl transition-colors">
+              <i class="fa-brands fa-whatsapp text-emerald-600 text-xl"></i>
+              <span>Consultar Precios por WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CATÁLOGO DE COMBOS ==================== -->
+  <section id="combos" class="py-16 sm:py-20 bg-zeta-black border-b border-zeta-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Encabezado y Tabs de Filtro -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div>
+          <span class="text-zeta-orange font-bold text-xs uppercase tracking-widest">Soluciones Listas para Obra</span>
+          <h2 class="font-display text-3xl sm:text-5xl uppercase text-white mt-1">
+            Nuestros Combos Armados
+          </h2>
+          <p class="text-neutral-400 text-sm sm:text-base mt-2 max-w-2xl">
+            Valores promocionales en efectivo o transferencia aplican para <strong class="text-neutral-200">entrega inmediata (miércoles, viernes y sábados)</strong>. Para acopiar a futuro, consultá <strong class="text-zeta-orange">Lista Acopio</strong>.
+          </p>
+        </div>
+
+        <!-- Filtros Interactivos -->
+        <div class="inline-flex flex-wrap gap-2 bg-zeta-dark p-1.5 rounded-xl border border-zeta-border self-start md:self-auto" role="tablist">
+          <button data-filter="all"
+                  class="filter-btn active px-4 py-2 rounded-lg text-xs sm:text-sm font-bold uppercase tracking-wide bg-zeta-orange text-white transition-all">
+            Todos (6)
+          </button>
+          <button data-filter="fin-de-ano"
+                  class="filter-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold uppercase tracking-wide text-neutral-300 hover:text-white transition-all">
+            Fin de Año y Terminaciones
+          </button>
+          <button data-filter="obra-gruesa"
+                  class="filter-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold uppercase tracking-wide text-neutral-300 hover:text-white transition-all">
+            Obra Gruesa
+          </button>
+        </div>
+      </div>
+
+      <!-- Grilla de Tarjetas de Combos -->
+      <div id="combos-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Renderizado dinámico mediante JS para mantener datos limpios y enlaces WA exactos -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PLAN DE ACOPIO ZETA ==================== -->
+  <section id="acopio" class="py-16 sm:py-20 bg-zeta-dark border-b border-zeta-border relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-br from-zeta-card via-zeta-card to-orange-950/30 border-2 border-zeta-orange/60 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl">
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-5">
+            <div class="inline-flex items-center gap-2 bg-zeta-orange/20 border border-zeta-orange text-zeta-orange text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>Modelo Híbrido · 30 Días de Resguardo Sin Cargo</span>
+            </div>
+
+            <h2 class="font-display text-3xl sm:text-5xl uppercase text-white leading-tight">
+              PLAN DE ACOPIO <span class="text-zeta-orange">ZETA</span>
+            </h2>
+
+            <p class="text-neutral-300 text-base sm:text-lg leading-relaxed">
+              ¿Cobraste el aguinaldo o planificás tu obra por etapas? Congelá tus materiales con nuestra <strong class="text-white">Lista Acopio</strong>, disfrutá de <strong class="text-zeta-orange">30 días de resguardo sin cargo</strong> y retirarlos cuando los necesites.
+            </p>
+
+            <!-- 3 Pasos Visuales del Modelo Híbrido -->
+            <div class="grid sm:grid-cols-3 gap-4 pt-2">
+              <div class="bg-zeta-black/80 border border-zeta-border p-4 rounded-2xl">
+                <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-zeta-orange text-white font-display font-bold text-lg mb-2.5">1</span>
+                <h3 class="font-bold text-white text-sm mb-1">Cotizás en Lista Acopio</h3>
+                <p class="text-xs text-neutral-400">Tarifa especial de acopio (diferenciada del precio promocional de entrega inmediata).</p>
+              </div>
+
+              <div class="bg-zeta-black/80 border border-zeta-border p-4 rounded-2xl">
+                <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-zeta-orange text-white font-display font-bold text-lg mb-2.5">2</span>
+                <h3 class="font-bold text-white text-sm mb-1">30 días sin cargo</h3>
+                <p class="text-xs text-neutral-400">Tu mercadería queda congelada y resguardada sin costo durante los primeros 30 días.</p>
+              </div>
+
+              <div class="bg-zeta-black/80 border border-zeta-border p-4 rounded-2xl">
+                <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-zeta-orange text-white font-display font-bold text-lg mb-2.5">3</span>
+                <h3 class="font-bold text-white text-sm mb-1">Retiro flexible o extensión</h3>
+                <p class="text-xs text-neutral-400">Coordinás entrega (mié/vie/sáb). <strong class="text-neutral-200">Con cargo mensual por resguardo pasado el plazo</strong> de 30 días.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lado derecho: Resumen y CTA -->
+          <div class="lg:col-span-5 bg-zeta-black border border-zeta-border rounded-2xl p-6 sm:p-7 space-y-5">
+            <div class="flex items-center gap-3 pb-4 border-b border-zeta-border">
+              <div class="w-12 h-12 rounded-xl bg-zeta-orange/15 text-zeta-orange flex items-center justify-center text-2xl">
+                <i class="fa-solid fa-calendar-check"></i>
+              </div>
+              <div>
+                <p class="font-display uppercase text-xl text-white">Condiciones Claras y Transparentes</p>
+                <p class="text-xs text-neutral-400">Para particulares, albañiles y contratistas</p>
+              </div>
+            </div>
+
+            <ul class="space-y-3 text-sm text-neutral-300">
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-zeta-orange mt-1"></i>
+                <span><strong class="text-white">Lista Acopio:</strong> protege tu presupuesto frente a futuros aumentos de lista.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-zeta-orange mt-1"></i>
+                <span><strong class="text-white">Primeros 30 días bonificados:</strong> resguardo 100% sin cargo desde la compra.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-zeta-orange mt-1"></i>
+                <span><strong class="text-white">Plazo extensible:</strong> con cargo mensual por resguardo pasado el plazo inicial de 30 días.</span>
+              </li>
+            </ul>
+
+            <a href="https://wa.me/5491168304581?text=Hola%20Corral%C3%B3n%20Zeta%2C%20quiero%20cotizar%20en%20Lista%20Acopio%20(con%2030%20d%C3%ADas%20de%20resguardo%20sin%20cargo)%20para%20congelar%20materiales."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="w-full inline-flex items-center justify-center gap-2.5 bg-zeta-orange hover:bg-zeta-orangeHover text-white font-display uppercase text-base tracking-wide py-4 px-5 rounded-xl shadow-lg transition-all">
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+              <span>Cotizar Plan de Acopio por WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== COTIZADOR RÁPIDO INTERACTIVO ==================== -->
+  <section id="cotizador" class="py-16 sm:py-20 bg-zeta-black border-b border-zeta-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-zeta-orange font-bold text-xs uppercase tracking-widest">Sin vueltas ni demoras</span>
+        <h2 class="font-display text-3xl sm:text-5xl uppercase text-white mt-1">
+          Cotizador Rápido de Materiales
+        </h2>
+        <p class="text-neutral-400 text-sm sm:text-base mt-2">
+          Marcá los rubros o cantidades que necesitás, elegí si es para entrega, retiro o acopio, y enviá tu lista armada directo a nuestro WhatsApp.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-8 items-start">
+        <!-- Selector de Materiales Híbrido (Buscador + Rubros + Lista Libre) -->
+        <div class="lg:col-span-7 bg-zeta-dark border border-zeta-border rounded-2xl p-6 sm:p-7 space-y-5">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h3 class="font-display uppercase text-xl text-white">1. Seleccioná o buscá materiales</h3>
+            <button type="button" id="clear-quote-btn" class="text-xs font-semibold text-neutral-400 hover:text-zeta-orange transition-colors">
+              <i class="fa-solid fa-rotate-left mr-1"></i>Limpiar todo
+            </button>
+          </div>
+
+          <!-- Buscador instantáneo -->
+          <div class="relative">
+            <i class="fa-solid fa-magnifying-glass text-neutral-400 absolute left-3.5 top-1/2 -translate-y-1/2 text-sm"></i>
+            <input type="text"
+                   id="material-search"
+                   placeholder="Buscar rápido (ej: cemento, látex, cable, caño PVC, pala...)"
+                   class="w-full bg-zeta-card border border-zeta-border focus:border-zeta-orange focus:outline-none rounded-xl pl-10 pr-9 py-2.5 text-sm text-white placeholder-neutral-500" />
+            <button type="button"
+                    id="clear-search-btn"
+                    aria-label="Borrar búsqueda"
+                    class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-white text-xs">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+          <!-- Pestañas compactas por rubro -->
+          <div id="category-tabs" class="flex gap-2 overflow-x-auto pb-1 no-scrollbar" role="tablist">
+            <!-- Renderizado dinámico de rubros -->
+          </div>
+
+          <!-- Resumen de ítems activos (visible aunque cambies de pestaña) -->
+          <div id="active-pills-wrapper" class="hidden bg-zeta-black/90 border border-zeta-orange/40 rounded-xl p-3">
+            <p class="text-[11px] font-bold uppercase tracking-wider text-zeta-orange mb-2">
+              <i class="fa-solid fa-check-double mr-1"></i>Seleccionados en tu lista:
+            </p>
+            <div id="active-pills" class="flex flex-wrap gap-1.5"></div>
+          </div>
+
+          <!-- Grilla compacta del rubro activo o resultado de búsqueda -->
+          <div id="materials-list" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <!-- Renderizado dinámico de ítems con contador +/- -->
+          </div>
+
+          <!-- Bloque Comodín: Lista libre para cualquier otro material -->
+          <div class="pt-2 border-t border-zeta-border">
+            <label for="extra-notes" class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-neutral-300 mb-2">
+              <span><i class="fa-solid fa-pen-to-square text-zeta-orange mr-1.5"></i>Sumar otros materiales / Lista libre</span>
+              <span class="text-[10px] font-normal text-neutral-400 normal-case">Ideal listas largas o medidas puntuales</span>
+            </label>
+            <textarea id="extra-notes"
+                      rows="3"
+                      placeholder="Escribí acá todo lo que no veas arriba: ej. 3 codos PVC 110, 2 rollos cable 2.5mm, 1 llana dentada, 4 bolsas de pegamento..."
+                      class="w-full bg-zeta-card border border-zeta-border focus:border-zeta-orange focus:outline-none rounded-xl p-3 text-sm text-white placeholder-neutral-500"></textarea>
+          </div>
+        </div>
+
+        <!-- Datos de Entrega y Resumen de Envío -->
+        <div class="lg:col-span-5 bg-zeta-dark border border-zeta-border rounded-2xl p-6 sm:p-7 space-y-5">
+          <h3 class="font-display uppercase text-xl text-white">2. Modalidad y Zona</h3>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-neutral-400 mb-2">¿Cómo querés operar?</label>
+            <div class="grid grid-cols-1 gap-2.5">
+              <label class="flex items-center gap-3 bg-zeta-card border border-zeta-border has-[:checked]:border-zeta-orange p-3 rounded-xl cursor-pointer">
+                <input type="radio" name="modality" value="Entrega inmediata (Miércoles / Viernes / Sábados - Precio Promocional)" checked class="accent-orange-500 w-4 h-4" />
+                <div>
+                  <span class="block text-sm font-bold text-white">Entrega inmediata a domicilio</span>
+                  <span class="block text-xs text-neutral-400">Precio promocional · Repartos miércoles, viernes y sábados</span>
+                </div>
+              </label>
+
+              <label class="flex items-center gap-3 bg-zeta-card border border-zeta-border has-[:checked]:border-zeta-orange p-3 rounded-xl cursor-pointer">
+                <input type="radio" name="modality" value="Retiro en Corralón (Av. Perón 4275 - Precio Promocional)" class="accent-orange-500 w-4 h-4" />
+                <div>
+                  <span class="block text-sm font-bold text-white">Retiro inmediato en Corralón</span>
+                  <span class="block text-xs text-neutral-400">Av. Perón 4275 - Presidente Derqui</span>
+                </div>
+              </label>
+
+              <label class="flex items-center gap-3 bg-zeta-card border border-zeta-border has-[:checked]:border-zeta-orange p-3 rounded-xl cursor-pointer">
+                <input type="radio" name="modality" value="Plan de Acopio (Lista Acopio - 30 días sin cargo, luego cargo mensual por resguardo)" class="accent-orange-500 w-4 h-4" />
+                <div>
+                  <span class="block text-sm font-bold text-white">Plan de Acopio (30 días sin cargo)</span>
+                  <span class="block text-xs text-neutral-400">Lista Acopio · Con cargo mensual por resguardo pasado el plazo</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label for="client-type" class="block text-xs font-bold uppercase tracking-wider text-neutral-400 mb-1.5">Soy...</label>
+              <select id="client-type" class="w-full bg-zeta-card border border-zeta-border focus:border-zeta-orange focus:outline-none rounded-xl px-3 py-2.5 text-sm text-white">
+                <option value="Particular / Hogar">Particular / Hogar</option>
+                <option value="Albañil / Contratista">Albañil / Contratista</option>
+                <option value="Maestro Mayor de Obra / Arquitecto">Profesional de Obra</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="client-zone" class="block text-xs font-bold uppercase tracking-wider text-neutral-400 mb-1.5">Barrio / Zona</label>
+              <input type="text"
+                     id="client-zone"
+                     placeholder="Ej: Derqui Centro, Monterrey, Toro..."
+                     class="w-full bg-zeta-card border border-zeta-border focus:border-zeta-orange focus:outline-none rounded-xl px-3 py-2.5 text-sm text-white placeholder-neutral-500" />
+            </div>
+          </div>
+
+          <!-- Vista previa del mensaje -->
+          <div class="bg-zeta-black border border-zeta-border rounded-xl p-3.5">
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-neutral-400">Vista previa del pedido</span>
+              <span id="selected-count" class="text-xs font-bold text-zeta-orange">0 ítems</span>
+            </div>
+            <pre id="message-preview" class="text-xs text-neutral-300 whitespace-pre-wrap font-sans leading-relaxed max-h-36 overflow-y-auto"></pre>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-2.5">
+            <button type="button"
+                    id="send-whatsapp-btn"
+                    class="flex-1 inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-display uppercase text-base tracking-wide py-3.5 px-5 rounded-xl shadow-lg transition-all">
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+              <span>Enviar Pedido a WhatsApp</span>
+            </button>
+            <button type="button"
+                    id="copy-quote-btn"
+                    title="Copiar texto del pedido"
+                    class="inline-flex items-center justify-center gap-2 bg-zeta-card hover:bg-neutral-800 border border-zeta-border text-neutral-200 font-semibold text-xs py-3.5 px-4 rounded-xl transition-colors">
+              <i class="fa-regular fa-copy"></i>
+              <span>Copiar</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== LOGÍSTICA, ENTREGAS Y UBICACIÓN ==================== -->
+  <section id="entregas" class="py-16 sm:py-20 bg-zeta-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-8 items-stretch">
+        <!-- Días de Entrega -->
+        <div class="lg:col-span-6 bg-zeta-card border border-zeta-border rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+          <div>
+            <span class="text-zeta-orange font-bold text-xs uppercase tracking-widest">Logística Organizada</span>
+            <h2 class="font-display text-3xl uppercase text-white mt-1 mb-3">
+              Días Fijos de Reparto
+            </h2>
+            <p class="text-sm text-neutral-300 mb-6">
+              Para que tu obra nunca quede parada esperando el camión, organizamos nuestras salidas en días fijos en Presidente Derqui y zona de influencia:
+            </p>
+
+            <div class="grid grid-cols-3 gap-3 mb-6">
+              <div class="bg-zeta-black border border-zeta-orange/50 rounded-xl p-4 text-center">
+                <i class="fa-solid fa-truck text-zeta-orange text-xl mb-2"></i>
+                <p class="font-display uppercase text-lg sm:text-xl text-white">Miércoles</p>
+                <p class="text-[11px] text-neutral-400">Reparto programado</p>
+              </div>
+              <div class="bg-zeta-black border border-zeta-orange/50 rounded-xl p-4 text-center">
+                <i class="fa-solid fa-truck text-zeta-orange text-xl mb-2"></i>
+                <p class="font-display uppercase text-lg sm:text-xl text-white">Viernes</p>
+                <p class="text-[11px] text-neutral-400">Reparto programado</p>
+              </div>
+              <div class="bg-zeta-black border border-zeta-orange/50 rounded-xl p-4 text-center">
+                <i class="fa-solid fa-truck text-zeta-orange text-xl mb-2"></i>
+                <p class="font-display uppercase text-lg sm:text-xl text-white">Sábados</p>
+                <p class="text-[11px] text-neutral-400">Reparto programado</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-zeta-black/90 border border-zeta-border rounded-xl p-4 flex items-center gap-3.5">
+            <i class="fa-solid fa-circle-info text-zeta-orange text-xl shrink-0"></i>
+            <p class="text-xs text-neutral-300 leading-relaxed">
+              <strong class="text-white">Tip de obra:</strong> Reservá tu cupo de flete con anticipación por WhatsApp para asegurar la bajada de materiales en el turno que te quede más cómodo.
+            </p>
+          </div>
+        </div>
+
+        <!-- Ubicación y Contacto -->
+        <div class="lg:col-span-6 bg-zeta-card border border-zeta-border rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+          <div>
+            <span class="text-zeta-orange font-bold text-xs uppercase tracking-widest">Mostrador y Depósito</span>
+            <h2 class="font-display text-3xl uppercase text-white mt-1 mb-3">
+              Dónde Estamos
+            </h2>
+            <p class="text-sm text-neutral-300 mb-6">
+              Pasá por nuestro local o escribinos directamente para cotizar en efectivo, transferencia o armar tu acopio.
+            </p>
+
+            <div class="space-y-4 mb-6">
+              <div class="flex items-start gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-zeta-orange/15 text-zeta-orange flex items-center justify-center shrink-0 mt-0.5">
+                  <i class="fa-solid fa-location-dot text-lg"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-neutral-400 uppercase font-bold">Dirección</p>
+                  <p class="text-base font-bold text-white">Av. Perón 4275, Presidente Derqui</p>
+                  <p class="text-xs text-neutral-400">Partido de Pilar, Provincia de Buenos Aires</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                  <i class="fa-brands fa-whatsapp text-xl"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-neutral-400 uppercase font-bold">WhatsApp Ventas y Pedidos</p>
+                  <p class="text-base font-bold text-white">11 6830-4581</p>
+                  <p class="text-xs text-neutral-400">Efectivo / Transferencia / Plan de Acopio</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="https://maps.google.com/?q=Av.+Presidente+Juan+Domingo+Peron+4275,+Presidente+Derqui,+Buenos+Aires"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="flex-1 inline-flex items-center justify-center gap-2 bg-zeta-black hover:bg-neutral-900 border border-zeta-border hover:border-zeta-orange text-white font-semibold text-sm py-3.5 px-4 rounded-xl transition-colors">
+              <i class="fa-solid fa-map-location-dot text-zeta-orange"></i>
+              <span>Abrir en Google Maps</span>
+            </a>
+            <a href="https://wa.me/5491168304581?text=Hola%20Corral%C3%B3n%20Zeta%2C%20les%20escribo%20desde%20la%20web."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="flex-1 inline-flex items-center justify-center gap-2 bg-zeta-orange hover:bg-zeta-orangeHover text-white font-bold text-sm py-3.5 px-4 rounded-xl transition-colors">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              <span>Escribir Ahora</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-zeta-black border-t border-zeta-border py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div>
+        <p class="font-display text-xl uppercase text-white">
+          CORRALÓN <span class="text-zeta-orange">ZETA</span>
+        </p>
+        <p class="text-xs text-neutral-400 mt-0.5">
+          Materiales para tu obra · Av. Perón 4275, Presidente Derqui, Pilar · Tel/WA: 11 6830-4581
+        </p>
+      </div>
+      <p class="text-xs text-neutral-500">
+        © 2026 Corralón Zeta. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ==================== BOTÓN FLOTANTE WHATSAPP ==================== -->
+  <a href="https://wa.me/5491168304581?text=Hola%20Corral%C3%B3n%20Zeta%2C%20necesito%20consultar%20por%20materiales."
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Contactar por WhatsApp"
+     class="fixed bottom-5 right-5 z-50 flex items-center gap-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-4 py-3.5 rounded-full shadow-2xl shadow-black/80 transition-transform hover:scale-105">
+    <i class="fa-brands fa-whatsapp text-2xl"></i>
+    <span class="hidden sm:inline text-sm">Cotizá por WhatsApp</span>
+  </a>
+
+  <!-- Toast de notificación (reemplaza alert) -->
+  <div id="toast" class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 hidden bg-zeta-card border border-zeta-orange text-white text-sm font-medium px-5 py-3 rounded-xl shadow-2xl">
+    Mensaje copiado al portapapeles
+  </div>
+
+  <!-- ==================== LÓGICA INTERACTIVA ==================== -->
+  <script>
+    const WHATSAPP_NUMBER = '5491168304581';
+
+    // Catálogo de Combos de Corralón Zeta
+    const COMBOS = [
+      {
+        id: 'parrilla',
+        category: 'fin-de-ano',
+        categoryLabel: 'Fin de Año y Terminaciones',
+        badge: 'ENTREGA VIERNES O SÁBADOS',
+        badgeColor: 'bg-zeta-orange text-white',
+        icon: 'fa-fire-burner',
+        title: 'COMBO PARRILLA COMPLETA',
+        subtitle: 'Llegá con el asador listo para las fiestas',
+        items: [
+          '280 Ladrillos comunes',
+          '3 Bolsas de Cemento Loma Negra (25 kg)',
+          '2 Bolsas de Cal Hidráulica (25 kg)',
+          '1/4 m³ de Arena (aprox. 7 bolsas)',
+          '2 Varillas de Hierro (6 mm)'
+        ],
+        ctaText: 'Consultar Valor por WhatsApp',
+        waMessage: 'Hola Corralón Zeta, quiero consultar el valor del *COMBO PARRILLA COMPLETA* (efectivo / transferencia) y coordinar entrega.'
+      },
+      {
+        id: 'pintura',
+        category: 'fin-de-ano',
+        categoryLabel: 'Fin de Año y Terminaciones',
+        badge: 'PREVENTA ACTIVA · PRECIO LANZAMIENTO',
+        badgeColor: 'bg-emerald-600 text-white',
+        icon: 'fa-paint-roller',
+        title: 'KIT PINTURA EXPRESS',
+        subtitle: 'Renová tu casa antes de fin de año',
+        items: [
+          '1 Látex interior/exterior blanco (10 L)',
+          '1 Fijador sellador acrílico (4 L)',
+          '2 Rodillos (lana 22 cm - antigota 17 cm)',
+          '2 Lijas'
+        ],
+        ctaText: 'Reservar por WhatsApp',
+        waMessage: 'Hola Corralón Zeta, quiero consultar el precio de lanzamiento y reservar el *KIT PINTURA EXPRESS*.'
+      },
+      {
+        id: 'revoque',
+        category: 'fin-de-ano',
+        categoryLabel: 'Fin de Año y Terminaciones',
+        badge: 'ENTREGA PROGRAMADA',
+        badgeColor: 'bg-neutral-800 text-zeta-orange border border-zeta-orange/40',
+        icon: 'fa-trowel',
+        title: 'COMBO REVOQUE LISTO',
+        subtitle: 'Emprolijá tus paredes y recibí en puerta',
+        items: [
+          'Cemento Loma Negra (25 kg)',
+          'Cal Hidráulica (25 kg)',
+          'Arena fina / mediana fraccionada o a granel',
+          'Hidrófugo aislante calculado según m²'
+        ],
+        ctaText: 'Consultar Valor por WhatsApp',
+        waMessage: 'Hola Corralón Zeta, quiero consultar precio y disponibilidad del *COMBO REVOQUE LISTO*.'
+      },
+      {
+        id: 'pared',
+        category: 'obra-gruesa',
+        categoryLabel: 'Obra Gruesa',
+        badge: 'IDEAL OBRA / ACOPIO',
+        badgeColor: 'bg-zeta-orange text-white',
+        icon: 'fa-border-all',
+        title: 'SÚPER COMBO PARED',
+        subtitle: 'Todo lo necesario para levantar mampostería',
+        items: [
+          '1 Palet de Ladrillos Huecos del 12 (144 un.)',
+          '6 Bolsas de Cal Hidráulica (25 kg)',
+          '4 Bolsas de Cemento LOMA NEGRA (25 kg)',
+          '1 m³ de Arena'
+        ],
+        ctaText: 'Consultar Valor por WhatsApp',
+        waMessage: 'Hola Corralón Zeta, quiero consultar el valor actualizado del *SÚPER COMBO PARED* (contado o Plan de Acopio).'
+      },
+      {
+        id: 'superestructura',
+        category: 'obra-gruesa',
+        categoryLabel: 'Obra Gruesa',
+        badge: 'OBRA PESADA · APTO ACOPIO',
+        badgeColor: 'bg-zeta-orange text-white',
+        icon: 'fa-building-columns',
+        title: 'COMBO SUPERESTRUCTURA',
+        subtitle: 'Hierros y hormigón para bases, columnas y vigas',
+        items: [
+          'Varillas de Hierro torsionado (según cálculo)',
+          'Cemento LOMA NEGRA (25 kg)',
+          'Piedra partida y Arena',
+          'Alambre de atar y estribos'
+        ],
+        ctaText: 'Consultar Valor por WhatsApp',
+        waMessage: 'Hola Corralón Zeta, quiero consultar el valor del *COMBO SUPERESTRUCTURA* (contado o Plan de Acopio).'
+      },
+      {
+        id: 'pieza4x4',
+        category: 'obra-gruesa',
+        categoryLabel: 'Obra Gruesa',
+        badge: 'MAMPOSTERÍA Y LOSA',
+        badgeColor: 'bg-neutral-800 text-zeta-orange border border-zeta-orange/40',
+        icon: 'fa-house-chimney',
+        title: 'COMBO PIEZA 4x4',
+        subtitle: 'Paquete integral para ampliar tu habitación',
+        items: [
+          'Ladrillos huecos para cerramiento 4x4 m',
+          'Cemento LOMA NEGRA y Cal Hidráulica',
+          'Arena y Piedra partida',
+          'Materiales estructurales para losa'
+        ],
+        ctaText: 'Consultar Valor por WhatsApp',
+        waMessage: 'Hola Corralón Zeta, quiero consultar el valor del *COMBO PIEZA 4x4 (mampostería y losa)*.'
+      }
+    ];
+
+    // Materiales por rubro (Top alta rotación para evitar listas interminables)
+    const MATERIAL_CATEGORIES = [
+      { id: 'obra-gruesa', label: 'Obra Gruesa', icon: 'fa-trowel-bricks' },
+      { id: 'pintureria', label: 'Pinturería', icon: 'fa-paint-roller' },
+      { id: 'herramientas', label: 'Herramientas', icon: 'fa-hammer' },
+      { id: 'electricidad', label: 'Electricidad', icon: 'fa-bolt' },
+      { id: 'plomeria', label: 'Plomería', icon: 'fa-faucet-drip' }
+    ];
+
+    const QUOTE_MATERIALS = [
+      // Obra Gruesa
+      { id: 'ladrillos_huecos', category: 'obra-gruesa', name: 'Ladrillos Huecos (12 / 18)', unit: 'palets / un.' },
+      { id: 'ladrillos_comunes', category: 'obra-gruesa', name: 'Ladrillos Comunes', unit: 'unidades' },
+      { id: 'cemento', category: 'obra-gruesa', name: 'Cemento Loma Negra (25 kg)', unit: 'bolsas' },
+      { id: 'cal', category: 'obra-gruesa', name: 'Cal Hidráulica (25 kg)', unit: 'bolsas' },
+      { id: 'arena', category: 'obra-gruesa', name: 'Arena (m³ o bolsas)', unit: 'm³ / bolsas' },
+      { id: 'hierros', category: 'obra-gruesa', name: 'Varillas de Hierro (6 / 8 / 10)', unit: 'barras' },
+
+      // Pinturería
+      { id: 'latex_blanco', category: 'pintureria', name: 'Látex Int/Ext Blanco (10L / 20L)', unit: 'latas' },
+      { id: 'fijador', category: 'pintureria', name: 'Fijador Sellador Acrílico (4L)', unit: 'latas' },
+      { id: 'impermeabilizante', category: 'pintureria', name: 'Membrana Líquida / Techos', unit: 'latas' },
+      { id: 'rodillos', category: 'pintureria', name: 'Rodillos (Lana 22cm / Antigota)', unit: 'unidades' },
+      { id: 'lijas_pinceles', category: 'pintureria', name: 'Lijas / Pinceles / Cinta', unit: 'ítems' },
+
+      // Herramientas
+      { id: 'pala', category: 'herramientas', name: 'Pala Ancha / de Punta', unit: 'unidades' },
+      { id: 'balde_cuchara', category: 'herramientas', name: 'Balde Albañil / Cuchara / Fratacho', unit: 'unidades' },
+      { id: 'disco_corte', category: 'herramientas', name: 'Discos de Corte / Desbaste', unit: 'unidades' },
+      { id: 'carretilla', category: 'herramientas', name: 'Carretilla Reforzada', unit: 'unidades' },
+      { id: 'nivel_cinta', category: 'herramientas', name: 'Nivel / Cinta Métrica / Plomada', unit: 'unidades' },
+
+      // Electricidad
+      { id: 'cable_25', category: 'electricidad', name: 'Cable Unipolar 2.5 mm (Rollo)', unit: 'rollos' },
+      { id: 'cable_15', category: 'electricidad', name: 'Cable Unipolar 1.5 mm (Rollo)', unit: 'rollos' },
+      { id: 'corrugado', category: 'electricidad', name: 'Caño Corrugado (3/4" / 7/8")', unit: 'rollos' },
+      { id: 'termicas', category: 'electricidad', name: 'Térmicas / Disyuntor / Tablero', unit: 'unidades' },
+      { id: 'cajas_tomas', category: 'electricidad', name: 'Cajas Rectangulares / Bastidores', unit: 'unidades' },
+
+      // Plomería
+      { id: 'cano_termofusion', category: 'plomeria', name: 'Caño Termofusión (20 / 25 mm)', unit: 'tiras' },
+      { id: 'cano_pvc', category: 'plomeria', name: 'Caño Desagüe PVC (110 / 63 / 40)', unit: 'tiras' },
+      { id: 'accesorios_termo', category: 'plomeria', name: 'Codos / Cuplas / Tees Termofusión', unit: 'unidades' },
+      { id: 'tanque_agua', category: 'plomeria', name: 'Tanque de Agua Tricapa', unit: 'unidades' },
+      { id: 'llaves_canillas', category: 'plomeria', name: 'Llaves de Paso / Canillas', unit: 'unidades' }
+    ];
+
+    const selectedQuantities = {};
+    let activeCategory = 'obra-gruesa';
+    let searchQuery = '';
+
+    // Renderizar tarjetas de combos
+    function renderCombos(filter = 'all') {
+      const grid = document.getElementById('combos-grid');
+      if (!grid) return;
+
+      const filtered = filter === 'all'
+        ? COMBOS
+        : COMBOS.filter(c => c.category === filter);
+
+      grid.innerHTML = filtered.map(combo => {
+        const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(combo.waMessage)}`;
+        return `
+          <article class="bg-zeta-dark border border-zeta-border hover:border-zeta-orange/60 rounded-2xl p-6 flex flex-col justify-between transition-all shadow-lg">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-neutral-400">${combo.categoryLabel}</span>
+                <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md ${combo.badgeColor}">
+                  ${combo.badge}
+                </span>
+              </div>
+
+              <div class="flex items-center gap-3 mb-2">
+                <div class="w-10 h-10 rounded-xl bg-zeta-orange/15 text-zeta-orange flex items-center justify-center shrink-0">
+                  <i class="fa-solid ${combo.icon} text-lg"></i>
+                </div>
+                <h3 class="font-display text-2xl uppercase text-white leading-tight">${combo.title}</h3>
+              </div>
+
+              <p class="text-xs text-neutral-400 mb-4">${combo.subtitle}</p>
+
+              <ul class="space-y-2 mb-6 border-t border-zeta-border pt-4">
+                ${combo.items.map(item => `
+                  <li class="flex items-start gap-2 text-sm text-neutral-200">
+                    <span class="w-1.5 h-1.5 rounded-full bg-zeta-orange mt-2 shrink-0"></span>
+                    <span>${item}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+
+            <div class="pt-2">
+              <a href="${waUrl}"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="w-full inline-flex items-center justify-center gap-2 bg-zeta-card hover:bg-zeta-orange border border-zeta-border hover:border-zeta-orange text-white font-display uppercase text-sm tracking-wide py-3 px-4 rounded-xl transition-all">
+                <i class="fa-brands fa-whatsapp text-emerald-400 group-hover:text-white text-base"></i>
+                <span>${combo.ctaText}</span>
+              </a>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    // Eventos de los botones de filtro de combos
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.remove('active', 'bg-zeta-orange', 'text-white');
+          b.classList.add('text-neutral-300');
+        });
+        btn.classList.add('active', 'bg-zeta-orange', 'text-white');
+        btn.classList.remove('text-neutral-300');
+        renderCombos(btn.dataset.filter);
+      });
+    });
+
+    // Renderizar pestañas de rubros del cotizador
+    function renderCategoryTabs() {
+      const tabsContainer = document.getElementById('category-tabs');
+      tabsContainer.innerHTML = MATERIAL_CATEGORIES.map(cat => {
+        const countInCat = QUOTE_MATERIALS.filter(m => m.category === cat.id && selectedQuantities[m.id] > 0).length;
+        const isActive = !searchQuery && activeCategory === cat.id;
+        const btnStyle = isActive
+          ? 'bg-zeta-orange text-white border-zeta-orange'
+          : 'bg-zeta-card text-neutral-300 border-zeta-border hover:border-zeta-orange/60 hover:text-white';
+
+        return `
+          <button type="button"
+                  onclick="selectCategory('${cat.id}')"
+                  class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border text-xs font-bold whitespace-nowrap transition-all shrink-0 ${btnStyle}">
+            <i class="fa-solid ${cat.icon}"></i>
+            <span>${cat.label}</span>
+            ${countInCat > 0 ? `<span class="ml-0.5 px-1.5 py-0.2 rounded-full text-[10px] ${isActive ? 'bg-white text-zeta-black' : 'bg-zeta-orange text-white'}">${countInCat}</span>` : ''}
+          </button>
+        `;
+      }).join('');
+    }
+
+    window.selectCategory = function(catId) {
+      activeCategory = catId;
+      searchQuery = '';
+      const searchInput = document.getElementById('material-search');
+      if (searchInput) searchInput.value = '';
+      document.getElementById('clear-search-btn').classList.add('hidden');
+      renderCategoryTabs();
+      renderQuoteMaterials();
+    };
+
+    // Renderizar píldoras resumen de ítems ya elegidos
+    function renderActivePills() {
+      const wrapper = document.getElementById('active-pills-wrapper');
+      const pillsContainer = document.getElementById('active-pills');
+      const chosen = QUOTE_MATERIALS.filter(m => selectedQuantities[m.id] > 0);
+
+      if (chosen.length === 0) {
+        wrapper.classList.add('hidden');
+        pillsContainer.innerHTML = '';
+        return;
+      }
+
+      wrapper.classList.remove('hidden');
+      pillsContainer.innerHTML = chosen.map(m => `
+        <span class="inline-flex items-center gap-1.5 bg-zeta-card border border-zeta-border text-xs text-white px-2.5 py-1 rounded-lg">
+          <strong class="text-zeta-orange">${selectedQuantities[m.id]}x</strong>
+          <span>${m.name}</span>
+          <button type="button" onclick="updateQty('${m.id}', -${selectedQuantities[m.id]})" aria-label="Quitar ${m.name}" class="text-neutral-400 hover:text-white ml-1">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </span>
+      `).join('');
+    }
+
+    // Renderizar lista del cotizador rápido (filtrada por rubro o búsqueda)
+    function renderQuoteMaterials() {
+      const container = document.getElementById('materials-list');
+      const filteredMaterials = searchQuery
+        ? QUOTE_MATERIALS.filter(m => m.name.toLowerCase().includes(searchQuery.toLowerCase()))
+        : QUOTE_MATERIALS.filter(m => m.category === activeCategory);
+
+      if (filteredMaterials.length === 0) {
+        container.innerHTML = `
+          <div class="sm:col-span-2 bg-zeta-card/60 border border-zeta-border rounded-xl p-4 text-center">
+            <p class="text-sm text-neutral-300">No encontramos ese producto en los botones rápidos.</p>
+            <p class="text-xs text-zeta-orange mt-1">Escribilo directamente en el cuadro <strong>"Sumar otros materiales / Lista libre"</strong> de abajo y lo cotizamos igual.</p>
+          </div>
+        `;
+      } else {
+        container.innerHTML = filteredMaterials.map(mat => {
+          const qty = selectedQuantities[mat.id] || 0;
+          const activeClass = qty > 0 ? 'border-zeta-orange bg-zeta-card' : 'border-zeta-border bg-zeta-card/60';
+          return `
+            <div class="flex items-center justify-between gap-2 border ${activeClass} p-3 rounded-xl transition-colors">
+              <div class="min-w-0">
+                <p class="text-sm font-semibold text-white truncate" title="${mat.name}">${mat.name}</p>
+                <p class="text-[11px] text-neutral-400">Unidad: ${mat.unit}</p>
+              </div>
+              <div class="flex items-center gap-1.5 shrink-0">
+                <button type="button"
+                        onclick="updateQty('${mat.id}', -1)"
+                        aria-label="Restar ${mat.name}"
+                        class="w-8 h-8 rounded-lg bg-zeta-black hover:bg-neutral-800 border border-zeta-border text-neutral-200 font-bold flex items-center justify-center">
+                  -
+                </button>
+                <span class="w-7 text-center text-sm font-bold ${qty > 0 ? 'text-zeta-orange' : 'text-neutral-400'}">
+                  ${qty}
+                </span>
+                <button type="button"
+                        onclick="updateQty('${mat.id}', 1)"
+                        aria-label="Sumar ${mat.name}"
+                        class="w-8 h-8 rounded-lg bg-zeta-orange hover:bg-zeta-orangeHover text-white font-bold flex items-center justify-center">
+                  +
+                </button>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      renderCategoryTabs();
+      renderActivePills();
+      updateMessagePreview();
+    }
+
+    window.updateQty = function(id, delta) {
+      const current = selectedQuantities[id] || 0;
+      const next = Math.max(0, current + delta);
+      if (next === 0) {
+        delete selectedQuantities[id];
+      } else {
+        selectedQuantities[id] = next;
+      }
+      renderQuoteMaterials();
+    };
+
+    function buildWhatsAppMessage() {
+      const modality = document.querySelector('input[name="modality"]:checked')?.value || 'Entrega a domicilio';
+      const clientType = document.getElementById('client-type').value;
+      const zone = document.getElementById('client-zone').value.trim();
+      const notes = document.getElementById('extra-notes').value.trim();
+
+      const chosenItems = QUOTE_MATERIALS.filter(m => selectedQuantities[m.id] > 0)
+        .map(m => `• ${m.name}: ${selectedQuantities[m.id]} (${m.unit})`);
+
+      const totalCount = chosenItems.length + (notes ? 1 : 0);
+      document.getElementById('selected-count').textContent = `${totalCount} ${totalCount === 1 ? 'ítem' : 'ítems'}`;
+
+      let msg = `Hola Corralón Zeta, quisiera pedir cotización:\n\n`;
+      if (chosenItems.length > 0) {
+        msg += `*Materiales seleccionados:*\n${chosenItems.join('\n')}\n\n`;
+      }
+      if (notes) {
+        msg += `*Lista libre / Otros materiales:*\n${notes}\n\n`;
+      }
+      if (chosenItems.length === 0 && !notes) {
+        msg += `*Materiales:* (A detallar en chat)\n\n`;
+      }
+      msg += `*Modalidad:* ${modality}\n`;
+      msg += `*Perfil:* ${clientType}\n`;
+      if (zone) msg += `*Zona / Barrio:* ${zone}\n`;
+
+      return msg.trim();
+    }
+
+    function updateMessagePreview() {
+      document.getElementById('message-preview').textContent = buildWhatsAppMessage();
+    }
+
+    // Eventos del buscador instantáneo
+    const searchInput = document.getElementById('material-search');
+    const clearSearchBtn = document.getElementById('clear-search-btn');
+
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim();
+      if (searchQuery) {
+        clearSearchBtn.classList.remove('hidden');
+      } else {
+        clearSearchBtn.classList.add('hidden');
+      }
+      renderQuoteMaterials();
+    });
+
+    clearSearchBtn.addEventListener('click', () => {
+      searchQuery = '';
+      searchInput.value = '';
+      clearSearchBtn.classList.add('hidden');
+      renderQuoteMaterials();
+    });
+
+    // Eventos en inputs del cotizador
+    document.querySelectorAll('input[name="modality"]').forEach(r => r.addEventListener('change', updateMessagePreview));
+    document.getElementById('client-type').addEventListener('change', updateMessagePreview);
+    document.getElementById('client-zone').addEventListener('input', updateMessagePreview);
+    document.getElementById('extra-notes').addEventListener('input', updateMessagePreview);
+
+    document.getElementById('clear-quote-btn').addEventListener('click', () => {
+      Object.keys(selectedQuantities).forEach(k => delete selectedQuantities[k]);
+      searchQuery = '';
+      searchInput.value = '';
+      clearSearchBtn.classList.add('hidden');
+      document.getElementById('extra-notes').value = '';
+      document.getElementById('client-zone').value = '';
+      renderQuoteMaterials();
+    });
+
+    document.getElementById('send-whatsapp-btn').addEventListener('click', () => {
+      const msg = buildWhatsAppMessage();
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank', 'noopener,noreferrer');
+    });
+
+    document.getElementById('copy-quote-btn').addEventListener('click', () => {
+      const text = buildWhatsAppMessage();
+      const temp = document.createElement('textarea');
+      temp.value = text;
+      document.body.appendChild(temp);
+      temp.select();
+      try {
+        document.execCommand('copy');
+        const toast = document.getElementById('toast');
+        toast.classList.remove('hidden');
+        setTimeout(() => toast.classList.add('hidden'), 2500);
+      } catch (e) {}
+      document.body.removeChild(temp);
+    });
+
+    // Menú móvil
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // Inicializar
+    renderCombos('all');
+    renderQuoteMaterials();
+  </script>
+</body>
+</html>
